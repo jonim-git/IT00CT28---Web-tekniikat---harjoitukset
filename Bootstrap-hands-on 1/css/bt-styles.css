@@ -1,0 +1,20 @@
+/* 
+    Author     : Your name here
+*/
+header {
+    background-color: #FBA90A;
+    color: #342609;
+}
+
+footer {
+    background-color: #342609;
+    color:#FBA90A;
+}
+
+section:nth-child(even) {
+    background-color: #FEF3DC;
+}
+
+section:nth-child(odd) {
+    background-color: #FDCD6D;
+}

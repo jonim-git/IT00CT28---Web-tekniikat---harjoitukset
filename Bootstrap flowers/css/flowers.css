@@ -1,0 +1,55 @@
+/* 
+    Author     : Liisa Auer
+*/
+main {
+    background-color: #EBF7E3;    
+}
+
+footer,
+header {
+    background-color: #375F1B;
+    padding-top: 10px;
+    color: #EBF7E3;  /* rgb(rgb(235,247,227) */
+}
+
+.bg-light {
+    background-color: transparent !important;
+}
+
+h2, h3 {
+    color: #375F1B;
+}
+
+.species {
+    color: #375F1B;
+    font-weight: bold;
+}
+
+img {
+    border: 5px solid #375F1B;
+    border-radius: 10px;
+}
+
+section.flowers {
+    margin-top: 1em;
+}
+
+section.flowers div {
+    margin-bottom: 20px;
+}
+
+nav .container-fluid {
+    padding-left: 0px;
+}
+
+.nav-link {
+    color: rgba(235,247,227,1) !important;
+}
+
+.navbar-toggler {
+    border-color: rgba(235,247,227,1) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(235,247,227,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
