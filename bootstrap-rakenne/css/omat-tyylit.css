@@ -1,0 +1,12 @@
+a.korttilinkki {
+    text-decoration: none;
+    color:black;
+}
+
+.card:hover{
+    background-color: lightcoral;
+}
+
+.card{
+    padding: 5px;
+}
