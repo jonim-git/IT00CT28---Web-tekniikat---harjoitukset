@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bootstrap page: Examples</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/messages.css" rel="stylesheet"> 
+        <meta name="author" content="Liisa Auer">       
+    </head>
+    <body>
+        <main class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-primary">Examples</h1>
+                </div>               
+            </div>
+
+            <div class="row">
+                <div class="col-md border-end border-start border-secondary">
+                    <h2 data-bs-toggle="tooltip" 
+                        data-bs-placement="top" 
+                        title="Tooltip on top"
+                        id="esim">Tooltips</h2>
+
+                    <p data-bs-toggle="tooltip" 
+                       data-bs-placement="right" 
+                       title="Tooltip on right">
+                       Tooltip on right.</p>
+
+                    <figure>
+                        <img src="img/pioni_suuri.jpg" alt="" class="img-thumbnail"
+                             data-bs-toggle="tooltip" 
+                             data-bs-placement="bottom" 
+                             title="Tooltip on bottom">
+                    </figure>
+                    
+                    <button type="button" class="btn btn-primary"
+                            data-bs-toggle="tooltip" 
+                            data-bs-placement="left" 
+                            title="Tooltip on left">
+                        Tooltip on left
+                    </button>
+                    <p data-bs-toggle="tooltip" 
+                       data-bs-placement="right" 
+                       data-bs-html="true"
+                       title="<i>Tooltip</i> on <b>right<b>">
+                        Tooltip with inline elements</p>
+                </div>
+
+                <div class="col-md border-end border-secondary">
+                    <h2>Popovers</h2>
+                    <p data-bs-container="body" 
+                       data-bs-toggle="popover" 
+                       data-bs-placement="bottom" 
+                       title="Example 1"
+                       data-bs-content="Some advice here. 1"
+                       >Advice, click for help. Click to hide.</p>
+
+                    <p><a data-bs-container="body" 
+                          data-bs-toggle="popover" 
+                          data-bs-placement="bottom" 
+                          title="Example 2"
+                          data-bs-content="Some advice here. 2"
+                          data-bs-trigger="focus"
+                          tabindex="0">
+                            Advice, click for help. Click outside to hide.</a></p>
+                </div>
+
+                <div class="col-md  border-end border-secondary">
+                    <h2>Messages</h2>
+                    <button id="message1" class="btn btn-primary"
+                            type="button" onclick="message1();">Message 1</button>
+                    <button id="message2" class="btn btn-secondary"
+                        type="button" onclick="message2();">Message 2</button>
+                    <button id="message2" class="btn btn-info"
+                        type="button" onclick="message3();">Message 3</button>                        
+                </div>                
+            </div>   
+            <div>
+                <p>Liisa Auer, Oulu University of Applied Sciences, 
+                    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a></p>
+            </div>                     
+        </main>
+
+        <div class="modal" tabindex="-1" id="mymessage">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="m_title">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="m_body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>                        
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" 
+        integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" 
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" 
+        crossorigin="anonymous"></script>
+
+    <script src="js/messages.js"></script>  
+    </body>
+</html>
