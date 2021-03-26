@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bootstrap hands-on</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="author" content="Liisa Auer">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+        section {
+            background-color: lightgoldenrodyellow;
+        }
+
+        .short {
+            width: 10em;
+        }
+
+        .accordion-button {
+                 background-color: aquamarine;
+            }
+
+        .accordion-button:not(.collapsed) {
+                color:black;
+                background-color: aquamarine;
+            }
+
+        .accordion-body {
+                background-color:lightgrey;
+                border: 1px solid #86b7fe; 
+            }
+
+        .accordion-button:focus {
+                box-shadow: none;
+            }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <header class="row bg-dark">
+            <div class="col-12">
+                <h1 class="text-success">Bootstrap hands-on 2</h1>
+            </div>
+        </header>
+
+        <section class="row">
+            <div class="col-md-4">
+                <h3 class="text-primary">Random numbers</h3>
+
+                <form>
+                    <div class="form-check">
+                        <input type="radio" name="num_scale" id="small" data-min="1" data-max="10"
+                            class="numbers form-check-input" checked>
+                        <label for="small" class="form-check-label">1 - 10</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" name="num_scale" id="middle" data-min="1" data-max="20"
+                            class="numbers form-check-input" checked>
+                        <label for="middle" class="form-check-label">1 - 20</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" name="num_scale" id="large" data-min="1" data-max="50"
+                            class="numbers form-check-input" checked>
+                        <label for="large" class="form-check-label">1 - 50</label>
+                    </div>
+
+                    <button type="button" class="btn-primary mt-3 mb-3" id="numbers">
+                        Numbers</button>
+                </form>
+
+                <p>Numbers: <span id="rnd_numbers"></span></p>
+            </div>
+
+            <div class="col-md-4">
+                <h3 class="text-danger">Circle <span class="text-success">or </span><span
+                        class="text-warning">Square</span></h3>
+
+                <form>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="option" checked value="1" id="radius">
+                        <label class="form-check-label" for="radius">Radius</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" name="option" value="2" id="Square">
+                        <label class="form-check-label" for="square">Square</label>
+                    </div>
+
+                    <div class="mt-3">
+                        <label class="form-label" for="radius_side2">Radius/Side</label>
+                        <input type="number" class="form-control" id="radius_side2">
+                    </div>
+
+                    <button type="button" class="btn btn-success mt-3 mb-3" id="calculate">
+                        Calculate</button>
+                </form>
+
+                <p>Result:<span id="result1"></span></p>
+            </div>
+
+            <div class="col-md-4">
+                <h3 class="text-secondary">Triangle</h3>
+
+                <form>
+                    <div class="row mb-2">
+                        <label class="col-md-3 col-form-label" for="side">Side</label>
+                        <div class="col-md-9">
+                            <input type="number" class="form-control" id="side">
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <label class="col-md-3 col-form-label" for="bottom">Bottom</label>
+                        <div class="col-md-9">
+                            <input type="number" class="form-control" id="bottom">
+                        </div>
+                    </div>
+
+                    <div class="text-end mt-2 mb-2">
+                        <button type="button" class="btn btn-primary" id="triangle">
+                            Triangle</button>
+                    </div>
+                </form>
+
+                <p>Triangle height: <span id="t_height"></span><br>
+                    Triangle around: <span id="t_around"></span><br>
+                    Triangle area: <span id="t_area"></span></p>
+            </div>
+
+        </section>
+
+        <section class="row">
+            <div class="col-md-4">
+                <h3 class="text-success">Random numbers</h3>
+
+                <form>
+                    <div class="input-group mb-3 short">
+                        <label class="input-group-text">Min</label>
+                        <input type="number" class="form-control" id="min">
+                    </div>
+
+                    <div class="input-group mb-3 short">
+                        <label class="input-group-text">Max</label>
+                        <input type="number" class="form-control" id="max">
+
+                        <button type="button" class="btn btn-success mt-3 mb-3" id="Random">
+                            Random</button>
+                    </div>
+
+                </form>
+
+                <p>Random numbers: <span id="randoms"></span></p>
+            </div>
+
+            <div class="col-md-4">
+                <h3 class="text-info">Collapse element</h3>
+                <button data-bs-toggle="collapse" data-bs-target="#teksti" class="btn btn-danger">Click me</button>
+
+                <div id="teksti" class="collapse mt-3 mb-5">
+                    <p>I have studied so hard all spring time. Now I learn Bootstrap and responsive
+                        design.</p>
+                    <p>This text will be shown and hided using the button above.</p>
+                    <p>Spinners</p>
+                    <div class="spinner-grow text-primary"></div>
+                    <div class="spinner-grow text-success"></div>
+                    <div class="spinner-grow text-info"></div>
+                    <div class="spinner-grow text-warning"></div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-5">
+                <h3 class="text-danger">Accordion</h3>
+                <div id="top">
+                    <div class="accordion-item">
+                        <div class="accordion-header" id="headOne">
+                            <button type="button" class="accordion-button" data-bs-toggle="collapse"
+                                data-bs-target="#One" aria-expanded="true" aria-controls="One">
+                                Collapsible text
+                            </button>
+                        </div>
+
+                        <div id="One" class="accordion-collapse collapse show" data-bs-parent="#top"
+                            aria-labelledby="headOne">
+                            <div class="accordion-body">
+                                <p>I have studied so hard all spring time. Now I learn Bootstrap and responsive design.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" id="headTwo">
+                            <button type="button" class="accordion-button" data-bs-toggle="collapse"
+                                data-bs-target="#Two" aria-expanded="false" aria-controls="Two">
+                                More text
+                            </button>
+                        </div>
+
+                        <div id="Two" class="accordion-collapse collapse" data-bs-parent="#top"
+                            aria-labelledby="headTwo">
+                            <div class="accordion-body">
+                                <p>These texts will be shown when user clicks the text headings.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" id="headThree">
+                            <button type="button" class="accordion-button" data-bs-toggle="collapse"
+                                data-bs-target="#Three" aria-expanded="false" aria-controls="Three">
+                                Spinners
+                            </button>
+                        </div>
+
+                        <div id="Three" class="accordion-collapse collapse" data-bs-parent="#top"
+                            aria-labelledby="headThree">
+                            <div class="accordion-body">
+                                <div class="spinner-grow text-primary"></div>
+                                <div class="spinner-border text-success"></div>
+                                <div class="spinner-border text-danger spinner-border-sm"></div>
+                                <div class="spinner-grow text-warning spinner-grow-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer class="row bg-dark">
+            <div class="col">
+                <p class="text-center text-light mt-2 mb-2">Joni Mäki</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- some Bootstrap components need popper.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+        integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
