@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Introduction to jQuery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Liisa Auer, 22.10.2019, CC-BY 4.0 -->
+    <meta content="Liisa Auer" name="author">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div>
+            <section>
+                <h2>Calories to Joules</h2>
+                <label for="amount1">Calories</label>
+                <input type="number" id="amount1">
+                <button type="button" id="calculate1">Calculate</button>
+                <p id="result1"></p>
+            </section>
+
+            <section>
+                <h2>Calories and Joules</h2>
+                <div>
+                    <input type="radio" name="caljou2" value="1" id="calories2" checked>
+                    <label for="calories2" class="radiolabel">Calories to Joules</label>
+                </div>
+                <div>
+                    <input type="radio" name="caljou2" value="2" id="joules2">
+                    <label for="joules2" class="radiolabel">Joules to Calories</label>
+                </div>
+
+                <label for="amount2">Amount</label>
+                <input type="number" id="amount2">
+                <button type="button" id="calculate2">Calculate</button>
+                <p id="result2"></p>
+            </section>
+
+            <section>
+                <h2>Calories and Joules</h2>
+                <div>
+                    <input type="radio" name="caljou3" value="4.184" data-unit-in=" cal" data-unit-out=" J" id="calories3" checked>
+                    <label for="calories3" class="radiolabel">Calories to Joules</label>
+                </div>
+                <div>
+                    <input type="radio" name="caljou3" value="0.2390" data-unit-in=" J" 
+                        data-unit-out=" cal" id="joules3">
+                    <label for="joules3" class="radiolabel">Joules to Calories</label>
+                </div>
+
+                <label for="amount3">Amount</label>
+                <input type="number" id="amount3">
+                <button type="button" id="calculate3">Calculate</button>
+                <p id="result3"></p>
+            </section>
+            <section>
+                <h2>Sum and Product</h2>
+                <div>
+                    <input type="checkbox" name="math" value="1" id="sum">
+                    <label for="sum" class="checklabel">Sum</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="math" value="3" id="subtraction">
+                    <label for="subtraction" class="checklabel">Subtraction</label>
+                </div>
+                <input type="number" id="num1" placeholder="number 1" class="numbers">
+                <input type="number" id="num2" placeholder="number 2" class="numbers">
+                <button type="button" id="calculate4">Calculate</button>
+                <p id="result4"></p>
+
+            </section>
+        </div>
+        <div>
+            <section>
+                <h2>Selecting 1</h2>
+                <p>My favorite color</p>
+                <ul>
+                    <li>
+                        <input type="radio" id="c1a" name="color_a">
+                        <label for="c1a">Red</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c2a" name="color_a">
+                        <label for="c2a">Green</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c3a" name="color_a">
+                        <label for="c3a">Blue</label>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Selecting 2</h2>
+                <p>My favorite color</p>
+                <ul>
+                    <li>
+                        <input type="radio" id="c1b" name="color_b">
+                        <label for="c1b">Red</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c2b" name="color_b">
+                        <label for="c2b">Green</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c3b" name="color_b">
+                        <label for="c3b">Blue</label>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Selecting 3</h2>
+                <p>My favorite color</p>
+                <ul>
+                    <li>
+                        <input type="radio" id="c1c" name="color_c" class="choice">
+                        <label for="c1c">Red</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c2c" name="color_c" class="choice">
+                        <label for="c2c">Green</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c3c" name="color_c" class="choice">
+                        <label for="c3c">Blue</label>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Selecting 4</h2>
+                <p>My favorite color</p>
+                <ul>
+                    <li>
+                        <input type="radio" id="c1d" name="color_d" class="choice">
+                        <label for="c1d">Red</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c2d" name="color_d" class="choice">
+                        <label for="c2d">Green</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c3d" name="color_d" class="choice">
+                        <label for="c3d">Blue</label>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div>
+            <section>
+                <h2>Show item 1</h2>
+                <p>My favorite color</p>
+                <ul>
+                    <li>
+                        <input type="radio" id="c1e" name="color_e" class="choice2">
+                        <label for="c1e">Red</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c2e" name="color_e" class="choice2">
+                        <label for="c2e">Green</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c3e" name="color_e" class="choice2">
+                        <label for="c3e">Blue</label>
+                    </li>
+                </ul>
+                <p>Here some text about the subject.</p>
+            </section>
+            <section>
+                <h2>Show item 2</h2>
+                <p>My favorite color</p>
+                <ul>
+                    <li>
+                        <input type="radio" id="c1f" name="color_f" class="choice2">
+                        <label for="c1f">Red</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c2f" name="color_f" class="choice2">
+                        <label for="c2f">Green</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c3f" name="color_f" class="choice2">
+                        <label for="c3f">Blue</label>
+                    </li>
+                </ul>
+                <p>Here some text about the subject.</p>
+            </section>
+
+            <section>
+                <h2>Right answer 1</h2>
+                <p>My favorite color</p>
+                <ul>
+                    <li>
+                        <input type="radio" id="c1g" name="color_g" class="answer1" value="1">
+                        <label for="c1g">Red</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c2g" name="color_g" class="answer1" value="0">
+                        <label for="c2g">Green</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c3g" name="color_g" class="answer1" value="0">
+                        <label for="c3g">Blue</label>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Right answer 2</h2>
+                <p>My favorite color</p>
+                <ul>
+                    <li>
+                        <input type="radio" id="c1h" name="color_h" class="answer1">
+                        <label for="c1h">Red</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c2h" name="color_h" class="answer1" value="1">
+                        <label for="c2h">Green</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c3h" name="color_h" class="answer1">
+                        <label for="c3h">Blue</label>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/introduction.js"></script>
+</body>
+
+</html>
