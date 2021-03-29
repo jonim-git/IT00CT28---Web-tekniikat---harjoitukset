@@ -1,0 +1,10 @@
+.omatausta,
+.dropdown-menu {
+    background-color: #579459
+}
+/* container-fluid koko leveydelle */
+.container-fluid{
+    padding-left: 0rem;
+    padding-right: 0rem;
+    overflow: hidden;
+  }
