@@ -63,6 +63,7 @@ h3 {
 .dropdown-item {
   font-weight: bold;
   color: #3c6749 !important;
+  font-style: normal;
 }
 
 .nav-link:hover,
@@ -82,4 +83,8 @@ footer {
   font-weight: 600;
   padding-top: 10px;
   font-size: 100%;
+}
+
+ul{
+  list-style-type: square;
 }
