@@ -1,10 +1,85 @@
-.omatausta,
-.dropdown-menu {
-    background-color: #579459
+/* Värit 1.0 Tummin ---> Vaalein
+#3c6749: Tummempi Amazon (teksti)
+#39794c:Amazon (ei vielä käytetty)
+#579459:Middle green (ei vielä käytetty)
+#77bf63:Mantis (header, footer, )
+#bfdb94:Medium Spring Bud (main)
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat+Alternates&family=Oswald&family=Raleway&display=swap');
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Raleway', sans-serif;
+ */
+main {
+  background-color: #bfdb94;
+  color: #3c6749;
+  font-family: 'Montserrat', sans-serif;
 }
+
+/* section {
+    padding-left:0.5rem;
+} */
+
+header,
+footer {
+  background-color: #77bf63;
+}
+
+a {
+  text-decoration: none;
+  font-style: italic;
+  color:#39794c;
+  font-weight: bolder;
+}
+
+a:hover {
+  text-decoration:none;
+  color:#77bf63;
+}
+
+h1 {
+  font-weight: 400;
+  color: #3c6749;
+  font-family: 'Raleway', sans-serif;
+  padding-left: 0.5rem;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  color: #3c6749;
+}
+
+h3 {
+  font-weight: 400;
+  color: #3c6749;
+  font-family: 'Raleway', sans-serif;
+}
+
+.nav-link,
+.dropdown-item {
+  font-weight: bold;
+  color: #3c6749 !important;
+}
+
+.nav-link:hover,
+.dropdown-item:hover {
+  color:#579459 !important;
+  background-color:transparent;
+}
+
 /* container-fluid koko leveydelle */
-.container-fluid{
-    padding-left: 0rem;
-    padding-right: 0rem;
-    overflow: hidden;
-  }
+.container-fluid {
+  padding-left: 0rem;
+  padding-right: 0rem;
+  overflow: hidden;
+}
+
+footer {
+  font-weight: 600;
+  padding-top: 10px;
+  font-size: 100%;
+}
