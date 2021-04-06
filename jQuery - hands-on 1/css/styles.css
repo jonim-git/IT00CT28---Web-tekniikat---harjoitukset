@@ -1,0 +1,75 @@
+/* 
+    Created on : May 8, 2019 
+    Author     : Liisa Auer, Oulu University of Applied Sciences
+*/
+
+
+main {
+    font-size: 100%;  /* 16px */
+    font-family: tahoma;
+    margin-left: 2em;
+}
+
+h2 {
+    font-size: 1em;
+}
+
+section {
+    margin-top: 1em;
+    margin-right: 1em;
+    padding-top: 0.5em;
+    width: 15em;
+    vertical-align: top;  
+    border-top: 1px dashed blue;
+    display: inline-block;
+}
+
+section.long {
+    width: 70%;
+}
+
+button {
+    display: block; 
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    font-family: tahoma;
+    font-size: 1em;
+}
+
+label {
+    margin-bottom: 0.5em;
+    width: 7em;
+    display: inline-block; 
+}
+
+input {
+    width: 6em;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: 1.2em;
+}
+
+.selected {
+    background-color: green;
+}
+
+img {
+    max-width: 100%;
+}
+
+#flowers1 li,
+#flowers2 li {
+    display: inline-block;
+    width: 6em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#flowers1, 
+#flowers2 {
+    padding-left: 0px;
+}
+
+

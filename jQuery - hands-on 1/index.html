@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery hands-on</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/styles.css" rel="stylesheet">
+        <meta content="Liisa Auer" name="author">
+        <!-- CC-BY 4.0 https://creativecommons.org/licenses/by/4.0/deed.fi -->        
+    </head>
+    <body>
+        <main>
+            <div>
+                <section>
+                    <h2>Q1: Going in</h2> 
+                    <label for="year">Birth year:</label><input type="number" id="year" />
+                    <button id="going_in">Going in</button>
+                    <p id="allow"></p>                
+                </section>
+
+                <section>
+                    <h2>Q2: Throw dice</h2> 
+                    <div>
+                        <input id="onedice" type="radio" name="dice" value="1" checked="checked">
+                        <label for="onedice"> One dice</label>
+                    </div>
+                    <div>
+                        <input id="twodices" type="radio" name="dice" value="2">
+                        <label for="twodices">Two dices</label>                    
+                    </div>
+                    <button id="throw_dice">Throw dice</button>
+                    <p id="result"></p>                
+                </section> 
+                
+                <section>
+                    <h2>Q3: Even or odd</h2>
+                    <h2>Q4: Positive or negative</h2>
+                    <label for="number">Number:</label><input type="number" id="number" />
+                    <button id="even_odd">Even or odd</button>
+                    <button id="pos_neg">Positive or negative</button>
+                    <ul>
+                        <li id="even" class="even_odd">Even</li>
+                        <li id="odd" class="even_odd">Odd</li>
+                    </ul>
+                    
+                    <ul>
+                        <li id="pos" class="pos_neg">Positive</li>
+                        <li id="neg" class="pos_neg">Negative</li>
+                    </ul>                    
+                </section>                                                 
+            </div> 
+            
+            <div>
+                <section class="long">
+                    <h2>Flowers 1</h2>
+                    <ul id="flowers1">
+                        <li>
+                            <img src="img/kuva1.png" alt="pic 1"/>
+                        </li>
+                        <li>
+                            <img src="img/kuva2.png" alt="pic 2"/>
+                        </li>
+                        <li>
+                            <img src="img/kuva3.png" alt="pic 3"/>
+                        </li>
+                        <li>
+                            <img src="img/kuva4.png" alt="pic 4"/>
+                        </li>
+                        <li>
+                            <img src="img/kuva5.png" alt="pic 5"/>
+                        </li>
+                        <li>
+                            <img src="img/kuva6.jpg" alt="pic 6"/>
+                        </li>
+                        <li>
+                            <img src="img/kuva7.png" alt="pic 7"/>
+                        </li>
+                        <li>
+                            <img src="img/kuva8.jpg" alt="pic 8"/>
+                        </li>
+                    </ul>
+                    <p id="selected"></p>
+                </section>
+
+                <section class="long">
+                    <h2>Flowers 2</h2>
+                    <button id="standard">Original order</button>
+                    <button id="random">Random order</button>
+                    <button id="set_back" disabled>Images to array</button>
+                    <ul id="flowers2">
+                    
+                    </ul>
+                </section>                
+            </div>
+            <div>
+                <section>
+                    <h2>Check boxes 1</h2>
+                    <div>
+                        <input id="bike1" type="checkbox" class="vehicle1" value="Bike"
+                            data-print="#check_a">
+                        <label for="bike1"> I have a bike</label>
+                    </div>
+                    <div>
+                        <input id="car1" type="checkbox" class="vehicle1" value="Car"
+                            data-print="#check_b">
+                        <label for="car1"> I have a car</label>
+                    </div>
+                    <div>
+                        <input id="boat1" type="checkbox" class="vehicle1" value="Boat" checked
+                            data-print="#check_c">
+                        <label for="boat1"> I have a boat</label>
+                    </div>
+                    <div>
+                        <p>I have <span id="check_a"></span> <span id="check_b"></span> 
+                        <span id="check_c">Boat</span></p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Check boxes 2</h2>
+                    <div>
+                        <input type="checkbox" class="vehicle2" value="Bike"
+                            data-print="#check_1" id="bike2">
+                        <label for="bike2"> I have a bike</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="vehicle2" value="Car"
+                            data-print="#check_2" id="car2">
+                        <label for="car2"> I have a car</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="vehicle2" value="Boat" checked
+                            data-print="#check_3" id="boat2">
+                        <label for="boat2"> I have a boat</label>
+                    </div>
+                    <div>
+                        <button id="check">Selected check boxes</button>
+                        <p>I have <span id="check_1"></span> <span id="check_2"></span> 
+                        <span id="check_3">Boat</span></p>
+                    </div>
+                </section>
+            </div>            
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="js/mycode.js"></script>
+    </body>
+</html>
