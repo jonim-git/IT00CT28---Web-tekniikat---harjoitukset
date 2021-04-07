@@ -71,7 +71,7 @@ $(function () {
         let luku2 = Number($("#num2").val());
         //kokoelma (collection), Node list js-puolella
         let rastit = $("[name=math]"); // rastit on jQueryn olio
-        
+
         // yksi tapa tehdä toisto js-tapaan
 
         /* for (let i = 0; i < rastit.length; i++) {
@@ -133,5 +133,61 @@ $(function () {
 
     $(".numbers").on("focusin", function () {
         $("#result4").html("");
+    });
+
+    $("[name=color_a]").on("click", function () {
+        //kuljetaan html-puussa >> traversing
+        $(this).parent().addClass("selected");
+
+        //kaikille li-elementeille disabled = property, 
+        //true >> päälle , false >> pois päältä
+        // input > li > ul > kaikki li:t
+        // kokoelma (collection), Node list
+        let liElementit = $(this).parent().parent().children();
+
+        liElementit.each(function () {
+            // $(this) >> yksi li-elementti kerrallaan käsittelyyn
+            // li >> lapset >> ensimmäinen >> disabled true
+            $(this).children().first().prop("disabled", true);
+        });
+    });
+
+    $("[name=color_b]").on("click", function () {
+        $(this).parent().addClass("selected");
+        $("[name=color_b]").prop("disabled", true);
+    });
+
+    $(".choice").on("click", function () {
+        $(this).parent().addClass("selected");
+        // [name=color_c] 
+        let name_attribuutti = $(this).attr("name");
+        let valinta = "[name=" + name_attribuutti + "]";
+        $(valinta).prop("disabled", true);
+    });
+
+    $(".choice2").on("click", function () {
+        //$(this).parent().parent().next().removeClass("not_visible")'
+        let name_attribuutti = $(this).attr("name");
+        // let esille = "[id=" + name_attribuutti + "]";
+        let esille = "#" + name_attribuutti;
+        $(esille).removeClass("not_visible");
+    });
+
+    $(".answer1").on("click", function () {
+        let vastaus = Number($(this).attr("data_oikein"));
+        // let vastaus = Number($(this).val());
+
+        if (vastaus === 1) {
+            //oikea
+            $(this).parent().addClass("selected");
+        } else {
+            //väärä
+            $(this).parent().addClass("wrong");
+            // mikä on oikea? [name=XXXX][value=1]
+            let name_attribuutti = $(this).attr("name");
+            let oikea_vastaus = "[name=" + name_attribuutti + "][value=1]";
+            $(oikea_vastaus).parent().addClass("right");
+        }
     })
+
 });
