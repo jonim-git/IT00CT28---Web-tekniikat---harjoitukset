@@ -95,3 +95,50 @@ ul{
     outline: none;
     box-shadow: none;
 }
+
+.btn-primary{
+  background-color: #77bf63 !important;
+  border-color: #3c6749  !important;
+  color:#3c6749 !important
+}
+
+/* kuville hassu hover-efekti */
+.image img:hover {
+  transform: rotate(10deg);
+}
+
+.image img {
+  border-radius:12px;
+  transition: all 200ms ease-in-out;
+}
+
+.image1 img:hover {
+  transform: rotate(-10deg);
+}
+
+.image1 img {
+  border-radius:12px;
+  transition: all 200ms ease-in-out;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #77bf63;
+  color:#3c6749;
+}
+.ykkönen{
+  background-color: #3196A2 !important;
+  width:100% !important;
+}
+.kakkonen{
+  background-color: #DDA73B !important;
+  width:100% !important;
+}
+
+
+.bg-secondary{
+ background-color: #99cc75 !important;
+ color:#3c6749;
+ border-radius:50px;
+ margin-left:8px;
+ width:initial !important;
+}
