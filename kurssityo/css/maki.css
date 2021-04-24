@@ -125,6 +125,12 @@ ul{
   background-color: #77bf63;
   color:#3c6749;
 }
+
+.accordion-button:focus{
+ border-color: #77bf63 !important;
+
+}
+
 .ykkönen{
   background-color: #3196A2 !important;
   width:100% !important;
@@ -134,11 +140,14 @@ ul{
   width:100% !important;
 }
 
-
 .bg-secondary{
  background-color: #99cc75 !important;
  color:#3c6749;
  border-radius:50px;
  margin-left:8px;
  width:initial !important;
+}
+
+::placeholder { 
+  opacity: 0.5 !important; 
 }
