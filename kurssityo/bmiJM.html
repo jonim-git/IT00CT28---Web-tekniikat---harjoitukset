@@ -56,27 +56,34 @@
         <h3>Body Mass Index</h3>
         <form>
           <div class="mb-3">
-            <label for="birthYear" class="form-label">Birth year</label> <i class="fa fa-question-circle"
-              aria-hidden="true"></i>
-            <input type="text" class="form-control" id="birthYear" placeholder="Four digits">
+            <label for="birthYear" class="form-label">Birth year</label>
+            <a href="#" data-toggle="popover" data-bscontent="Enter your birth year, 4 digits." data-bs-trigger="focus"
+            tabindex="0"><i class="fa fa-question-circle"
+              aria-hidden="true"></i></a>
+            <input type="text" name="BMI" class="form-control" id="birthYear" placeholder="Four digits">
           </div>
           <div class="mb-3">
-            <label for="weight" class="form-label">Weight (kg) </label> <i class="fa fa-question-circle"
-              aria-hidden="true"></i>
-            <input type="text" class="form-control" id="weight" placeholder="Full kilos, no decimals">
+            <label for="weight" class="form-label">Weight (kg) </label>
+            <a href="#" data-toggle="popover" data-bscontent="Enter your weight in kg. Don't worry, your information isn't going anywhere!" data-bs-trigger="focus"
+            tabindex="0"> <i class="fa fa-question-circle"
+              aria-hidden="true"></i></a>
+            <input type="text" name="BMI" class="form-control" id="weight" placeholder="Full kilos, no decimals">
           </div>
           <div class="mb-3">
-            <label for="height" class="form-label">Height (cm) </label> <i class="fa fa-question-circle"
-              aria-hidden="true"></i>
-            <input type="text" class="form-control" id="height" placeholder="Centimeters, no decimals">
+            <label for="height" class="form-label">Height (cm) </label>
+            <a href="#" data-toggle="popover" data-bscontent="Enter your height in centimeters." data-bs-trigger="focus"
+            tabindex="0">
+            <i class="fa fa-question-circle" aria-hidden="true"></i></a>
+              <input type="text" name="BMI" class="form-control" id="height" placeholder="Centimeters, no decimals">
           </div>
           <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="weightRange">
-            <label class="form-check-label" for="weightRange">Show also my normal weight range</label> <i
-              class="fa fa-question-circle" aria-hidden="true"></i>
+            <input type="checkbox" name="BMI" class="form-check-input" id="weightRange">
+            <label class="form-check-label" for="weightRange">Show also my normal weight range</label>
+            <a href="#" data-toggle="popover" data-bscontent="By checking this, you will also get what would be your normal weight according to calculations." data-bs-trigger="focus"
+            tabindex="0"> <i class="fa fa-question-circle" aria-hidden="true"></i></a>
           </div>
           <div class="d-grid gap-2 d-md-flex justify-content-end">
-            <button type="submit" class="btn btn-primary"><i class="fa fa-calculator" aria-hidden="true"></i>
+            <button id="BMI" type="button" class="btn btn-primary"><i class="fa fa-calculator" aria-hidden="true"></i>
               BMI
             </button>
           </div>
@@ -89,7 +96,7 @@
         <p> Please do not use the BMI directly to measure
           fatness or slimness. The body mass index may
           have increased, for example, physique, due to
-          muscularity or other factors</p>
+          muscularity or other factors.</p>
         <p>
           <button class="btn btn-primary m-3" type="button" data-bs-toggle="collapse" data-bs-target="#Explanation"
             aria-expanded="false" aria-controls="Explanation"> <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -113,8 +120,13 @@
         <h3>Waist control</h3>
         <form>
           <div class="mb-3">
-            <label for="waist" class="form-label">Waist (cm)</label> <i class="fa fa-question-circle"
-              aria-hidden="true"></i>
+            <label for="waist" class="form-label">Waist (cm)</label>
+            <a href="#" data-toggle="popover" title="How to measure your waist" data-bscontent="
+            Start at the top of your hip bone, then bring the tape measure all the way around your body, level with your belly button.
+            Make sure it's not too tight and that it's straight, even at the back. Don't hold your breath while measuring.
+            Check the number on the tape measure right after you exhale." data-bs-trigger="focus"
+            tabindex="0"><i class="fa fa-question-circle"
+              aria-hidden="true"></i></a>
             <input type="text" class="form-control" id="waist" placeholder="Centimeters, no decimals">
           </div>
           <div class="mb-3">
@@ -132,8 +144,9 @@
             </div>
           </div>
           <div class="d-grid gap-2 d-md-flex justify-content-start">
-            <button type="submit" class="btn btn-primary"><i class="fa fa-child" aria-hidden="true"></i>
-               Waist
+            <button type="button" id="waistControl" class="btn btn-primary"><i class="fa fa-child"
+                aria-hidden="true"></i>
+              Waist
             </button>
           </div>
         </form>
@@ -162,7 +175,37 @@
       </div>
     </footer>
   </main>
-
+  <div class="modal" tabindex="-1" id="missingInput">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="m_title">Missing input</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="m_body">
+                <p>You need to write all input data.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>                        
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" id="ageNotification">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="m_title">Note the age</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="m_body">
+                  <p>BMI results are for person aged 20-60.</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>                        
+              </div>
+          </div>
+      </div>
+</div>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
     integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
     crossorigin="anonymous"></script>

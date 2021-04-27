@@ -151,3 +151,7 @@ ul{
 ::placeholder { 
   opacity: 0.5 !important; 
 }
+
+.tausta {
+  background-color: #DDA73B;
+}
