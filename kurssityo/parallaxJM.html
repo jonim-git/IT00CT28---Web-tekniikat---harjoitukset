@@ -11,6 +11,7 @@
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/maki.css">
+  <link rel="stylesheet" href="css/parallax.css">
 </head>
 
 <body>
@@ -35,9 +36,9 @@
                   <a class="nav-link" href="touristsJM.html">Tourists</a>
                 </li>
                 <li class="nav-item">
-                <li class="nav-item">
                   <a class="nav-link" href="imagesJM.html">Images</a>
                 </li>
+                <li class="nav-item">
                 <a class="nav-link" href="parallaxJM.html">Parallax</a>
                 </li>
                 <li class="nav-item">
@@ -50,49 +51,69 @@
       </div>
     </header>
 
-    <section class="row ms-3">
-      <div class="col-12 mb-3">
-        <h2>Täytetekstiä</h2>
-      </div>
 
-      <div class="col-12">
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente consequuntur impedit, at magni aut dolor
-          officia debitis ab soluta repellat. Est quis incidunt distinctio labore impedit! Molestiae tempore assumenda
-          eligendi.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente consequuntur impedit, at magni aut dolor
-          officia debitis ab soluta repellat. Est quis incidunt distinctio labore impedit! Molestiae tempore assumenda
-          eligendi.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente consequuntur impedit, at magni aut dolor
-          officia debitis ab soluta repellat. Est quis incidunt distinctio labore impedit! Molestiae tempore assumenda
-          eligendi.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente consequuntur impedit, at magni aut dolor
-          officia debitis ab soluta repellat. Est quis incidunt distinctio labore impedit! Molestiae tempore assumenda
-          eligendi.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente consequuntur impedit, at magni aut dolor
-          officia debitis ab soluta repellat. Est quis incidunt distinctio labore impedit! Molestiae tempore assumenda
-          eligendi.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente consequuntur impedit, at magni aut dolor
-          officia debitis ab soluta repellat. Est quis incidunt distinctio labore impedit! Molestiae tempore assumenda
-          eligendi.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente consequuntur impedit, at magni aut dolor
-          officia debitis ab soluta repellat. Est quis incidunt distinctio labore impedit! Molestiae tempore assumenda
-          eligendi.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente consequuntur impedit, at magni aut dolor
-          officia debitis ab soluta repellat. Est quis incidunt distinctio labore impedit! Molestiae tempore assumenda
-          eligendi.
-        </p>
-      </div>
-    </section>
 
-    <footer class="row">
-      <div class="col-md-6 col-12">
-        <p class="text-center ms-4 text-md-start">Joni Mäki<br>2021</p>
-      </div>
-      <div class="col-md-6 col-12">
-        <p class="text-center me-4 text-md-end">Bootstrap and jQuery</p>
-      </div>
-    </footer>
+    
+      
 
+      <div class="row">
+        <div>
+          <h2>Parallax</h2>
+        </div>
+        <div id="bgimg-1" class="parallax">
+          <!-- place for the text over the image -->
+          <div class="caption">
+            <!-- the actual text -->
+            <span class="border">OULU - Capital of Northern Finland</span>
+          </div>
+        </div>
+
+        <!-- the text that scrolls over the image -->
+        <div class="text">
+          <p>TOIMI</p>
+        </div>
+
+        <div id="bgimg-2" class="parallax">
+
+        </div>
+
+        <!-- the text that scrolls over the image -->
+        <div class="text">
+         <p>ALAPA TOIMIMAAN</p>
+        </div>
+
+        <div id="bgimg-3" class="parallax">
+          <div class="caption">
+            <!-- the actual text -->
+            <span class="border">NYT SITTE</span>
+          </div>
+        </div>
+
+        <!-- the text that scrolls over the image -->
+        <div class="text">
+          <p>ny sitte</p>
+        </div>
+
+        <div id="bgimg-4" class="parallax">
+
+        </div>
+
+        <!-- the text that scrolls over the image -->
+        <div class="text">
+          <p>TOIMI</p>
+        </div>
+        <div class="text wide">
+          <footer class="row">
+            <div class="col-md-6 col-12">
+              <p class="text-center ms-4 text-md-start">Joni Mäki<br>2021</p>
+            </div>
+            <div class="col-md-6 col-12">
+              <p class="text-center me-4 text-md-end">Bootstrap and jQuery</p>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"

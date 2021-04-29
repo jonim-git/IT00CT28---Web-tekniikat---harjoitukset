@@ -25,133 +25,9 @@ $(function () {
         limit = limit.toFixed(0)
         return limit;
     }
+    // värien reset-funktiot
 
-    $('[data-toggle="popover"]').popover();
-
-
-    $("#BMI").on("click", function () {
-        let height = Number($("#height").val())
-        let weight = Number($("#weight").val())
-        let result = getBMI(height, weight)
-
-        if (result < 17) {
-            $("#exp_1").addClass("tausta")
-            $("#exp_2").removeClass("tausta")
-            $("#exp_3").removeClass("tausta")
-            $("#exp_4").removeClass("tausta")
-            $("#exp_5").removeClass("tausta")
-            $("#exp_6").removeClass("tausta")
-            $("#exp_7").removeClass("tausta")
-
-        }
-
-        if (result > 16.9 && result < 18.5) {
-            $("#exp_1").removeClass("tausta")
-            $("#exp_2").addClass("tausta")
-            $("#exp_3").removeClass("tausta")
-            $("#exp_4").removeClass("tausta")
-            $("#exp_5").removeClass("tausta")
-            $("#exp_6").removeClass("tausta")
-            $("#exp_7").removeClass("tausta")
-        }
-
-        if (result > 18.4 && result < 25) {
-            $("#exp_1").removeClass("tausta")
-            $("#exp_2").removeClass("tausta")
-            $("#exp_3").addClass("tausta")
-            $("#exp_4").removeClass("tausta")
-            $("#exp_5").removeClass("tausta")
-            $("#exp_6").removeClass("tausta")
-            $("#exp_7").removeClass("tausta")
-        }
-
-        if (result > 24.9 && result < 30) {
-            $("#exp_1").removeClass("tausta")
-            $("#exp_2").removeClass("tausta")
-            $("#exp_3").removeClass("tausta")
-            $("#exp_4").addClass("tausta")
-            $("#exp_5").removeClass("tausta")
-            $("#exp_6").removeClass("tausta")
-            $("#exp_7").removeClass("tausta")
-        }
-
-        if (result > 29.9 && result < 35) {
-            $("#exp_1").removeClass("tausta")
-            $("#exp_2").removeClass("tausta")
-            $("#exp_3").removeClass("tausta")
-            $("#exp_4").removeClass("tausta")
-            $("#exp_5").addClass("tausta")
-            $("#exp_6").removeClass("tausta")
-            $("#exp_7").removeClass("tausta")
-        }
-
-        if (result > 34.9 && result < 40) {
-            $("#exp_1").removeClass("tausta")
-            $("#exp_2").removeClass("tausta")
-            $("#exp_3").removeClass("tausta")
-            $("#exp_4").removeClass("tausta")
-            $("#exp_5").removeClass("tausta")
-            $("#exp_6").addClass("tausta")
-            $("#exp_7").removeClass("tausta")
-        }
-
-        if (result >= 40) {
-            $("#exp_1").removeClass("tausta")
-            $("#exp_2").removeClass("tausta")
-            $("#exp_3").removeClass("tausta")
-            $("#exp_4").removeClass("tausta")
-            $("#exp_5").removeClass("tausta")
-            $("#exp_6").removeClass("tausta")
-            $("#exp_7").addClass("tausta")
-        }
-        if ($("#weightRange").prop("checked") === true) {
-            let normalMin = getWeightLimit(height, 18.5)
-            let normalMax = getWeightLimit(height, 24.9)
-            $("#normalWeight").html(normalMin + " - " + normalMax)
-
-        }
-
-        $("#bmi").html(result)
-    })
-
-    $("#waistControl").on("click", function () {
-        let waist = Number($("#waist").val())
-        let gender = Number($("[name=gender]:checked").val())
-
-        if (gender === 1 && waist < 90) {
-            $("#risk_1").addClass("tausta")
-            $("#risk_2").removeClass("tausta")
-            $("#risk_3").removeClass("tausta")
-        } else if (gender === 2 && waist < 80) {
-            $("#risk_1").addClass("tausta")
-            $("#risk_2").removeClass("tausta")
-            $("#risk_3").removeClass("tausta")
-        }
-
-        if (gender === 1 && waist >= 90) {
-            $("#risk_1").removeClass("tausta")
-            $("#risk_2").addClass("tausta")
-            $("#risk_3").removeClass("tausta")
-        } else if (gender === 2 && waist >= 80) {
-            $("#risk_1").removeClass("tausta")
-            $("#risk_2").addClass("tausta")
-            $("#risk_3").removeClass("tausta")
-        }
-
-        if (gender === 1 && waist > 100) {
-            $("#risk_1").removeClass("tausta")
-            $("#risk_2").removeClass("tausta")
-            $("#risk_3").addClass("tausta")
-        } else if (gender === 2 && waist > 90) {
-            $("#risk_1").removeClass("tausta")
-            $("#risk_2").removeClass("tausta")
-            $("#risk_3").addClass("tausta")
-        }
-    })
-    //focus-tapahtumat
-    $("[name=BMI]").on("focusin", function () {
-        this.select();
-        $("#bmi").html("");
+    function resetColors() {
         $("#exp_1").removeClass("tausta")
         $("#exp_2").removeClass("tausta")
         $("#exp_3").removeClass("tausta")
@@ -159,56 +35,167 @@ $(function () {
         $("#exp_5").removeClass("tausta")
         $("#exp_6").removeClass("tausta")
         $("#exp_7").removeClass("tausta")
+    }
+
+    function resetColors2() {
+        $("#risk_1").removeClass("tausta")
+        $("#risk_2").removeClass("tausta")
+        $("#risk_3").removeClass("tausta")
+    }
+    //pop-over
+    $('[data-toggle="popover"]').popover();
+
+    //BMI-nappi
+    $("#BMI").on("click", function () {
+        if (validateInput() === false) {
+            return;
+        }
+
+        let height = Number($("#height").val())
+        let weight = Number($("#weight").val())
+        let result = getBMI(height, weight)
+        resetColors()
+
+        if (result < 17) {
+            $("#exp_1").addClass("tausta")
+        }
+
+        if (result > 16.9 && result < 18.5) {
+
+            $("#exp_2").addClass("tausta")
+
+        }
+
+        if (result > 18.4 && result < 25) {
+            $("#exp_3").addClass("tausta")
+        }
+
+        if (result > 24.9 && result < 30) {
+            $("#exp_4").addClass("tausta")
+        }
+
+        if (result > 29.9 && result < 35) {
+            $("#exp_5").addClass("tausta")
+
+        }
+
+        if (result > 34.9 && result < 40) {
+            $("#exp_6").addClass("tausta")
+        }
+
+        if (result >= 40) {
+            $("#exp_7").addClass("tausta")
+        }
+        if ($("#weightRange").prop("checked") === true) {
+            let normalMin = getWeightLimit(height, 18.5)
+            let normalMax = getWeightLimit(height, 24.9)
+            $("#normalWeight").html(normalMin + " - " + normalMax)
+        }
+
+        $("#bmi").html(result)
+    })
+    
+    //waist-nappi
+    $("#waistControl").on("click", function () {
+        let waist = Number($("#waist").val())
+        let gender = Number($("[name=gender]:checked").val())
+        resetColors2()
+
+        if (gender === 1 && waist < 90) {
+            $("#risk_1").addClass("tausta")
+        } else if (gender === 2 && waist < 80) {
+            $("#risk_1").addClass("tausta")
+        }
+
+        if (gender === 1 && waist >= 90) {
+            $("#risk_2").addClass("tausta")
+        } else if (gender === 2 && waist >= 80) {
+            $("#risk_2").addClass("tausta")
+        }
+
+        if (gender === 1 && waist > 100) {
+            $("#risk_3").addClass("tausta")
+        } else if (gender === 2 && waist > 90) {
+            $("#risk_3").addClass("tausta")
+        }
+    })
+
+    //focus-tapahtumat
+    $("[name=BMI]").on("focusin", function () {
+        this.select();
+        resetColors()
+        $("#bmi").html("");
     });
 
     $("#waist").on("focusin", function () {
         this.select()
-        $("#risk_1").removeClass("tausta")
-        $("#risk_2").removeClass("tausta")
-        $("#risk_3").removeClass("tausta")
+        resetColors2()
     });
 
     $("[name=gender]").on("click", function () {
         $("#waist").trigger("focus");
         $("#waist").val("");
     });
-    //iän lasku
-    function age() {
-        let date = new Date()
-        let year = date.getFullYear()
-        return year - this._birthYear
-    }
 
     /**
      * Check that all input data is written. Show the error message.
      * @returns (Boolean) true >> ok, false >> not ok
      */
-    
 
-        let fields = Number($("[name=BMI]").val("oujea"))
-        if (fields === "") {
-            /* "näytä modalikkuna" - koodi tähän */
+    function validateInput() {
+        let birthYear = Number($("#birthYear").val())
+        let weight = Number($("#weight").val())
+        let height = Number($("#height").val())
+        //lasketaan ikä
+
+        /* let fields = Number($("[name=BMI]").val()) */
+
+        if (birthYear === 0) {
+            checkInput()
             return false;
         }
 
-        else if (fields === 1 && age < 20 || age > 60) {
-
+        if (weight === 0) {
+            checkInput()
+            return false;
         }
 
+        if (height === 0) {
+            checkInput()
+            return false;
 
+        } else {
 
+            let date = new Date()
+            let current_year = date.getFullYear()
+            let age = current_year - birthYear
 
+            if (age < 20 || age > 60) {
+                ageNote()
+                return true;
+            }
+            return true;
+        }
     }
 
     //modal-ikkunat
 
-    function input() {
-        let myModal = new bootstrap.Modal(document.getElementById('missingInput'))
+    function checkInput() {
+        document.getElementById("m_title").innerHTML = "Missing input";
+        document.getElementById("m_body").innerHTML = "You need to write all input data."
+
+        let myModal = new bootstrap.Modal(document.getElementById('myModal'),
+            { backdrop: "static" }
+        )
         myModal.show();
     }
 
     function ageNote() {
-        let myModal = new bootstrap.Modal(document.getElementById('ageNotification'),
+
+        document.getElementById("m_title").innerHTML = "Note the age"
+        document.getElementById("m_body").innerHTML = "BMI results are for persons aged 20-60."
+
+        let myModal = new bootstrap.Modal(document.getElementById('myModal'),
             { backdrop: "static" }
         )
         myModal.show();
