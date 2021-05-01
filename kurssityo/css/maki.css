@@ -19,11 +19,9 @@ main {
   color: #3c6749;
   font-family: 'Montserrat', sans-serif;
 }
-
-/* section {
-    padding-left:0.5rem;
-} */
-
+body {
+  background-color: #bfdb94;
+}
 header,
 footer {
   background-color: #77bf63;

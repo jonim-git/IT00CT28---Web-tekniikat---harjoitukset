@@ -60,6 +60,10 @@ body, html {
     text-align: center;
 }
 
+.wide {
+  width:auto;
+}
+
 /* Turn off parallax scrolling for all tablets and phones. 
 Increase/decrease the pixels if needed. Test what is the proper value 
 for your larger screens and smaller screens. */

@@ -1,11 +1,12 @@
 /*
 https://www.w3schools.com/howto/howto_css_parallax.asp
 */
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat+Alternates&family=Oswald&family=Raleway&display=swap');
 body, html {
   height: 100%; /* this is a must for parallax. */
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 100%;
+  background-color:#bfdb94;
 }
 
 .parallax {
@@ -19,14 +20,18 @@ body, html {
   background-size: cover;
 }
 
+.container-fluid {
+ overflow:visible;
+}
+
 #bgimg-1{
   background-image: url("../img/mustikkasatoa.png");
   height: 100%;
 }
 
 #bgimg-2 {
-  background-image: url("../img/auringonkukkia.png");
-  height: 50%;
+  background-image: url("../img/kukka.png");
+  height: 60%;
 }
 
 #bgimg-3 {
@@ -35,7 +40,7 @@ body, html {
 }
 #bgimg-4 {
   background-image: url("../img/pilpasuo_bg.png");
-  height: 30%;
+  height: 100%;
 }
 
 .caption {
@@ -48,7 +53,7 @@ body, html {
 
 .caption span.border {
   background-color: rgba(57, 121, 76, 0.5);
-  border-radius: 7px;
+  border-radius: 2px;
   color: rgba(255,255,255, 0.9);
   padding: 12px;
   font-size: 1.5em;
@@ -62,9 +67,16 @@ body, html {
     position: relative;
 }
 
+.wide {
+min-width: 100%;
+padding:0;
+}
+
 .text h3 {
     text-align: center;
 }
+
+
 
 /* Turn off parallax scrolling for all tablets and phones. 
 Increase/decrease the pixels if needed. Test what is the proper value 
@@ -78,5 +90,6 @@ for your larger screens and smaller screens. */
         padding: 30px 10px 30px 10px;
         position: relative;
     }     
-}
 
+
+  }
