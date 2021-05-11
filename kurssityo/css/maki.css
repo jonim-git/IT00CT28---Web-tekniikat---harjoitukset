@@ -1,27 +1,30 @@
 /* Värit 1.0 Tummin ---> Vaalein
 #3c6749: Tummempi Amazon (teksti)
 #39794c:Amazon (ei vielä käytetty)
-#579459:Middle green (ei vielä käytetty)
+#579459:Middle green (nav link hover, dropdown item)
 #77bf63:Mantis (header, footer, )
 #bfdb94:Medium Spring Bud (main)
 
 */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat+Alternates&family=Oswald&family=Raleway&display=swap');
 
-/* font-family: 'Montserrat', sans-serif;
+/* font-family: 'Montserrat', sans-serif; ***** (Käytössä) *****
 font-family: 'Montserrat Alternates', sans-serif;
 font-family: 'Oswald', sans-serif;
 font-family: 'Raleway', sans-serif;
  */
- 
+
+body {
+  background-color: #bfdb94;
+} 
+
 main {
   background-color: #bfdb94;
   color: #3c6749;
   font-family: 'Montserrat', sans-serif;
+  height:100%;
 }
-body {
-  background-color: #bfdb94;
-}
+
 header,
 footer {
   background-color: #77bf63;
@@ -71,13 +74,6 @@ h3 {
   background-color:transparent;
 }
 
-/* container-fluid koko leveydelle */
-.container-fluid {
-  padding-left: 0rem;
-  padding-right: 0rem;
-  overflow: hidden;
-}
-
 footer {
   font-weight: 600;
   padding-top: 10px;
@@ -101,7 +97,8 @@ ul{
   color:#3c6749 !important
 }
 
-/* kuville hassu hover-efekti */
+/* kuville hover-efekti, joka kallistaa kuvan */
+/* oikealle */
 .image img:hover {
   transform: rotate(10deg);
 }
@@ -110,7 +107,7 @@ ul{
   border-radius:12px;
   transition: all 200ms ease-in-out;
 }
-
+/* Vasemmalle */
 .image1 img:hover {
   transform: rotate(-10deg);
 }
@@ -119,7 +116,7 @@ ul{
   border-radius:12px;
   transition: all 200ms ease-in-out;
 }
-
+/* accordion-määrittelyt */
 .accordion-button:not(.collapsed) {
   background-color: #77bf63;
   color:#3c6749;
@@ -129,7 +126,7 @@ ul{
  border-color: #77bf63 !important;
 
 }
-
+/* listan taustat */
 .ykkönen{
   background-color: #3196A2 !important;
   width:100% !important;
@@ -138,7 +135,7 @@ ul{
   background-color: #DDA73B !important;
   width:100% !important;
 }
-
+/* badge väri ja tyyli*/
 .bg-secondary{
  background-color: #99cc75 !important;
  color:#3c6749;
@@ -146,11 +143,11 @@ ul{
  margin-left:8px;
  width:initial !important;
 }
-
+/* placeholder tekstin läpinäkyvyys */
 ::placeholder { 
   opacity: 0.5 !important; 
 }
-
+/* bmi- taustaväritys */
 .tausta {
   background-color: #DDA73B;
 }

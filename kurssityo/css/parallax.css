@@ -3,30 +3,30 @@ https://www.w3schools.com/howto/howto_css_parallax.asp
 */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat+Alternates&family=Oswald&family=Raleway&display=swap');
 body, html {
-  height: 100%; /* this is a must for parallax. */
+  height: 100%; 
   font-family: 'Oswald', sans-serif;
   font-size: 100%;
-  background-color:#bfdb94;
+  
+}
+
+.col-12{
+  padding:0px;
 }
 
 .parallax {
   position: relative;
   opacity: 0.8;
   
-  /* Create the parallax scrolling effect */
+  /* parallax-scrollaus */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.container-fluid {
- overflow:visible;
-}
-
+/* kuvat, mitä käytetään parallax-sivulla */
 #bgimg-1{
   background-image: url("../img/mustikkasatoa.png");
-  height: 100%;
+  height: 80%;
 }
 
 #bgimg-2 {
@@ -36,13 +36,13 @@ body, html {
 
 #bgimg-3 {
   background-image: url("../img/pitkospuut_bg.png");
-  height: 60%;
+  height: 80%;
 }
 #bgimg-4 {
   background-image: url("../img/pilpasuo_bg.png");
-  height: 100%;
+  height: 80%;
 }
-
+/* Kuvan päälle tulevan tekstin tyylitiedostot */
 .caption {
   position: absolute;
   left: 0%;
@@ -61,26 +61,29 @@ body, html {
   line-height: 1em;
   border:1px solid rgba(57, 121, 76, 0.5) !important;
 }
-
+/* Kuvan alla olevan tekstin tyylittely */
 .text {
     padding: 30px 100px 30px 100px;
     position: relative;
+    background-color:#bfdb94;
 }
-
+/* Tämä tarvitaan, että footer näkyisi kaikilla sivuilla oikein*/
 .wide {
-min-width: 100%;
-padding:0;
+padding:0 !important;
 }
-
+/* Otsikon keskitys */
 .text h3 {
     text-align: center;
 }
+/* Footerin määritykset tälle sivulle, bootstrapista tulisi muuten -12 marginit footerin sivuille */
+footer.row {
+  margin-left:0;
+  margin-right:0;
+}
 
 
-
-/* Turn off parallax scrolling for all tablets and phones. 
-Increase/decrease the pixels if needed. Test what is the proper value 
-for your larger screens and smaller screens. */
+/* Parallax-scrollaus pois päältä tableteilta ja puhelimilta. 
+Nosta/laske pikseleitä, jos on tarve. */
 @media screen and (max-width: 1366px) {
     .parallax {
         background-attachment: scroll;

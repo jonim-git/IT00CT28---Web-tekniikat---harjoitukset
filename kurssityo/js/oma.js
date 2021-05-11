@@ -1,3 +1,6 @@
+/* Author: Joni Mäki */
+/* Date: 3.5.2021 */
+
 $(function () {
     /**
      * Calculates the body mass index.
@@ -94,31 +97,33 @@ $(function () {
 
         $("#bmi").html(result)
     })
-    
-    //waist-nappi
+
     $("#waistControl").on("click", function () {
         let waist = Number($("#waist").val())
         let gender = Number($("[name=gender]:checked").val())
         resetColors2()
 
-        if (gender === 1 && waist < 90) {
-            $("#risk_1").addClass("tausta")
-        } else if (gender === 2 && waist < 80) {
-            $("#risk_1").addClass("tausta")
-        }
+        if (gender === 1) {
 
-        if (gender === 1 && waist >= 90) {
-            $("#risk_2").addClass("tausta")
-        } else if (gender === 2 && waist >= 80) {
-            $("#risk_2").addClass("tausta")
-        }
+            if (waist < 90) {
+                $("#risk_1").addClass("tausta")
+            } else if (waist >= 90) {
+                $("#risk_2").addClass("tausta")
+            } else if (waist > 100) {
+                $("#risk_3").addClass("tausta")
+            }
 
-        if (gender === 1 && waist > 100) {
-            $("#risk_3").addClass("tausta")
-        } else if (gender === 2 && waist > 90) {
-            $("#risk_3").addClass("tausta")
+        } if (gender === 2) {
+            if (waist < 80) {
+                $("#risk_1").addClass("tausta")
+            } else if (waist >= 80) {
+                $("#risk_2").addClass("tausta")
+            } else if (waist > 90) {
+                $("#risk_3").addClass("tausta")
+            }
         }
     })
+
 
     //focus-tapahtumat
     $("[name=BMI]").on("focusin", function () {
@@ -146,9 +151,9 @@ $(function () {
         let birthYear = Number($("#birthYear").val())
         let weight = Number($("#weight").val())
         let height = Number($("#height").val())
-        //lasketaan ikä
 
-        /* let fields = Number($("[name=BMI]").val()) */
+
+        /* let fields = Number($("[name=BMI]").val()) Tällä pystyisi lukemaan kaikki BMI-nimiset input-kentät samaan muuttujaan, en käyttänyt tässä.*/
 
         if (birthYear === 0) {
             checkInput()
@@ -165,7 +170,7 @@ $(function () {
             return false;
 
         } else {
-
+            //lasketaan ikä
             let date = new Date()
             let current_year = date.getFullYear()
             let age = current_year - birthYear
